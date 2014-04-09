@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+<title> Ploadit </title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+<link rel="stylesheet" type="text/css" href="footer.css" />
+<link rel="stylesheet" type="text/css" href="drop.css" />
+
+<link rel="icon" type="image/ico" href="favicon.ico"/>
+
+<style>
+p
+{
+text-indent:50px;
+line-height:30px;
+}
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".dropable").hover(function(){
+		$("#dropdown").css("visibility","visible");
+	$ }, function(){
+		$("#dropdown").css("visibility","hidden");
+	});
+});
+</script>
+</head>
+<body>
+
+			<div id="head">
+			</div>
+			
+			<div id="menu-wrapper">
+				<a href="mailto:support@ploadit.com"><img src="mailico.png" style="width:20px;height:20px;"/></a>
+				<form style="margin:0px;position:relative;top:-22px;left:32px;">
+				<input name="search" type="text" id="search"/>
+				<input type="submit" value="Search!"/ id="search-submit" />
+				</form>
+			</div>
+
+	<div id="heading-wrapper">
+			
+			<div id="title-wrapper">
+<div id="home"><a href="index.html" class="link" style="font-size:32px;"><img src="ploadit.png" style="width:300px;height:101.35px"/> Beta</a></div>
+	<div id="navbar">
+	<ul id="nav">
+	<li id="nav"><a href="notes.html" class="link">Notes</a></li>
+	<li id="nav" class="dropable"><a href="about.html" class="link" id="current">About</a></li>
+	<li id="nav"><a href="contact.html" class="link">Contact</a></li>
+	<li id="nav"><a href="forum.html" class="link">Forum</a></li>
+	</ul>
+	</div>
+
+	<div id="dropdown" class="dropable">
+		<a href="team.html" class="dlink">The Team</a><br/>
+		<a href="how.html" class="dlink">How it Works</a>
+	</div>
+			</div>
+			<div id="hr"></div>
+			<div id="welcome">
+			Welcome to Ploadit Beta!
+			</div>
+	</div>
+
+		<div id="content">
+	<div id="left-con" style="width:98%">	
+	<div class="header">Hi, We're Ploadit!</div>
+		<p style="text-indent:110px;"> .....and we saw a problem. </p>
+            <p>No one waits for you. You miss a class, and it’s your full responsibility to catch up on all the missed homework, lecture content, quizzes, tests, and presentations. Maybe you had a club conference. Maybe you had a sports game or a competition. Maybe you were simply sick or too tired from last night’s homework to really pay attention in class. Nonetheless, life doesn’t wait for you, and high school is no exception. You all have this problem. And we have the solution. </p>
+
+            <p>Ploadit is a web-based company whose website you can use to access class notes written by your Gunn peers. Categorized by your grade, teacher, and specific class or course, Ploadit not only allows students to catch up on missed assignments and lectures with unprecedented ease, but also provides an opportunity for students to clarify confusing concepts, practice and review for upcoming tests or exams, and help immensely with homework through each others’ notes. It’s not a matter of option, but a necessity for high school students.</p>
+
+            <p>Ploadit will save your grades. Ploadit will give you a break from all the stress and homeworks and catch-up work for missed lectures, and be purely educational and academically honest all throughout your journey.</p>  
+
+            <p>We want to engage you in academics, without stressing or boring you to death. Take life easy, and all the while you do it, experience learning. So (u)pload something, and see where it takes you. You'll be surprised by what you find.</p> 
+	</div>
+		</div>
+		<div id="body-bg">
+			<div class="footer" style="left:200px;">
+				<div class="footer-head">More</div>
+				<a href="team.html" class="foot-link">The Ploadit Team</a><br />
+				<a href="contact.html" class="foot-link">Help Center</a><br />
+				<a href="how.html" class="foot-link">The Ploadit Guide</a><br />
+			</div>
+			<div class="footer" style="left:390px;bottom:-600px;">
+				<div class="footer-head">Ploadit</div>
+				<a href="index.html" class="foot-link">Home</a><br />
+				<a href="about.html" class="foot-link">About us</a><br />
+				<a href="notes.html" class="foot-link">Notes</a><br />
+				<a href="contact.html" class="foot-link">Contact</a><br />
+			</div>
+		</div>
+</body>
+</html>

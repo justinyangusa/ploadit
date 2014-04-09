@@ -1,0 +1,31 @@
+/*page Footer*/
+div.footer
+{
+font-family:sanford;
+position:relative;
+bottom:-700px;
+text-align:right;
+width:200px;
+height:100px;
+margin-right:auto;
+margin-left:auto;
+z-index:3;
+line-height:25px;
+}
+
+.footer-head
+{
+font-weight:bold;
+text-decoration:underline;
+}
+
+.foot-link
+{
+color:#888888;
+text-decoration: none;
+}
+
+.foot-link:hover
+{
+color:#555555;
+}
