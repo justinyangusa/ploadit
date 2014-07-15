@@ -1,0 +1,21 @@
+//some forum implementation
+﻿extends layout
+
+block title
+    .jumbotron
+        h1 #{title}
+        p File Forum.
+block content
+    p Has a question? Insert lolcat here
+    form(class='navbar-form navbar-left' role='search')
+        .form-group
+            input#questionTextBox(type='text' class='form-control' placeholder='type a question')
+            button#askButton(type='button' action='' class='btn btn-default' style='margin-left:10px') Ask your stupidly annoying question!
+
+    script(type='text/javascript').
+
+        $('#joinButton').click(function(evt){
+            //browse to chat room template
+           window.location = 'ask/' + $('#roomTextBox').val() + '?username=' + $('#usernameTextBox').val();
+           return;
+        });
