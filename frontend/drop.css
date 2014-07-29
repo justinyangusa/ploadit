@@ -1,27 +1,30 @@
-#dropdown
-{
+div#dropdown{
+z-index:1;
 visibility:hidden;
 padding-top:25px;
 position:relative;
-float:right;
-right:-190px;
-top:35px;
-height:45px;
+left:77px;
+bottom:4px;
+height:36px;
 width:135px;
 border-style:none;
 text-align:center;
 padding:0px;
 }
 
-a.dlink
-{
-font-family:sanford;
+a.dlink{
+padding:3px;
+position:relative;
+top:11px;
+border-width:1px;
+border-style:solid;
+border-color:#FFFFFF #CFCFCF #CFCFCF;
+font-family:head-font;
 font-size:20px;
 text-decoration:none;
 color:#3073FF;
 }
 
-a.dlink:hover
-{
+a.dlink:hover{
 color:#1051DD;
 }

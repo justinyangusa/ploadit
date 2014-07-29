@@ -5,115 +5,127 @@
 
 <title> Ploadit </title>
 <link rel="stylesheet" type="text/css" href="style.css" />
-<link rel="stylesheet" type="text/css" href="style2.css" />
 <link rel="stylesheet" type="text/css" href="footer.css" />
 <link rel="stylesheet" type="text/css" href="drop.css" />
+<link rel="stylesheet" type="text/css" href="upload-style.css" />
 
 <link rel="icon" type="image/ico" href="favicon.ico"/>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-	$(".dropable").hover(function(){
-		$("#dropdown").css("visibility","visible");
-	$ }, function(){
-		$("#dropdown").css("visibility","hidden");
-	});
-});
-</script>
+<script src="dropdown.js"></script>
+<script src="categorizer.js"></script>
+<script src="misc.js"></script>
 </head>
 <body>
-
-			<div id="head">
+	<div id="head">
+		<div id="logo">
+			<a href="index.html" id="logoLink">
+				<object id="logoSVG" type="image/svg+xml" data="ploaditLogo.svg">
+					<img src="ploaditLogo.svg">
+				</object>
+			</a>
+		</div>
+		<div id="navbar">
+			<ul id="nav">
+				<li id="nav"><a href="notes.html" class="link">Notes</a></li>
+				<li id="nav" class="dropable"><a href="about.html" class="link">About</a></li>
+				<li id="nav"><a href="contact.html" class="link">Contact</a></li>
+				<li id="nav"><a href="forum.html" class="link">Q & A</a></li>
+			</ul>
+			<div id="dropdown" class="dropable">
+				<a href="team.html" class="dlink">The Team</a><br/>
 			</div>
-			
-			<div id="menu-wrapper">
-				<a href="mailto:support@ploadit.com"><img src="mailico.png" style="width:20px;height:20px;"/></a>
-				<form style="margin:0px;position:relative;top:-22px;left:32px;">
-				<input name="search" type="text" id="search"/>
+		</div>
+		<div id="headIcons">
+			<a href="mailto:support@ploadit.com"><img src="mailico.png" onmouseover="changeImage(this, 1)" onmouseout="changeImage(this, 2)"/></a>
+			<form id="search-form">
+				<input name="search" type="text" id="search" />
 				<input type="submit" value="Search!"/ id="search-submit" />
+			</form>
+		</div>
+	</div>
+	<div id="content" style="height:900px; width:750px; right:140px;">
+		<div id="left-con" style="height:250px; width:100%; padding:10px 15px;">	
+		<div class="header">Hi, welcome to Ploadit!</div>
+			<p class="text">
+				Ploadit is an online study resource that allows Gunn students to share notes and knowledge. <br/>
+				Use Ploadit.com to:<br/>
+				<ul class="list">
+					<li>Browse through class notes taken by your own Gunn peers</li>
+					<li>Ask and answer questions about homework, confusing concepts, class projects, and more</li>
+					<li>Look up homework schedules for each class</li>
+				</ul>
+				Register now to see for yourself. If you've already registered, you can log in.<br/>
+			</p>
+		</div>
+		<div id="right-con" style="width:100%; height:300px; position:relative; left:25px;">	
+			<div class="header">Upload Straight Away!</div>
+			<div id="forms">
+				<form style="height:300px;">
+					<span>
+						What's your name? <br />
+						<input name="name" type="text"/><br /><br />
+
+						Grade?<br />
+						<input name="grade" type="radio" value="9"/>Freshman<br />
+						<input name="grade" type="radio" value="10"/>Sophomore<br />
+						<input name="grade" type="radio" value="11"/>Junior<br />
+						<input name="grade" type="radio" value="12"/>Senior<br /><br />
+					</span>
+					<span style="position:absolute; bottom:185px; left:200px;">
+						Class notes are on<br />
+						<select class="option-in" id="subject-choice" onchange="showClass(this, 1)">
+							<option>Choose subject</option>
+							<option>Science</option>
+							<option>Math</option>
+							<option>Foreign Language</option>
+							<option>History</option>
+						</select><br />
+						<select class="option-in" id="class-choice1" style="visibility:hidden">
+							
+						</select>
+						<br /><br />
+					</span>
+					<span style="position:absolute; bottom:146px; left:500px;">
+						Upload Notes!<br />
+						<input name="file" type="file"/><br /><br /><br />
+						<input type="submit" value="(U)ploadit!" id="button"/>	
+					</span>
 				</form>
 			</div>
-
-	<div id="heading-wrapper">
-			
-			<div id="title-wrapper">
-<div id="home"><a href="index.html" class="link" style="font-size:32px;"><img src="ploadit.png" /> Beta</a></div>
-	<div id="navbar">
-	<ul id="nav">
-	<li id="nav"><a href="notes.html" class="link">Notes</a></li>
-	<li id="nav" class="dropable"><a href="about.html" class="link">About</a></li>
-	<li id="nav"><a href="contact.html" class="link">Contact</a></li>
-	<li id="nav"><a href="forum.html" class="link">Forum</a></li>
-	</ul>
-	</div>
-	
-	<div id="dropdown" class="dropable">
-		<a href="team.html" class="dlink">The Team</a><br/>
-		<a href="how.html" class="dlink">How it Works</a>
-	</div>
-			</div>
-			<div id="hr"></div>
-			<div id="welcome">
-				Welcome to Ploadit!
-			</div>
-	</div>
-
-		<div id="content">
-	<div id="left-con">	
-	<div class="header">Home</div>
-		<p class="text">Hi, welcome to Ploadit.com!<br />
-		Use the "Notes" tab to browse through your peers notes!<br />
-		Click on the "About" tab for specifics about what Ploadit does, and <br />
-		Contact us by clicking on the "Contact" tab!
-		</p>
-	</div>
-	<div id="right-con">	
-<div class="header">Upload Straight Away!</div>
-				<div id="forms">
-		<form>
-		What's your name? <br />
-		<input name="name" type="text"/><br /><br />
-
-		Grade?<br />
-		<input name="grade" type="radio" value="9"/>Freshman<br />
-		<input name="grade" type="radio" value="10"/>Sophomore<br />
-		<input name="grade" type="radio" value="11"/>Junior<br />
-		<input name="grade" type="radio" value="12"/>Senior<br /><br />
-		
-		Class/course notes are on<br />
-		<select class="option-in">
-		<option value="option">Option</option>
-		<option value="option">Option</option>
-		<option value="option">Option</option>
-		</select><br /><br />
-		
-		Who is the teacher?<br />
-		<input name="teacher-in" type="text"/><br /><br />
-
-		Upload Notes!<br />
-		<input name="file" type="file"/><br /><br />
-
-		<input type="submit" value="(U)ploadit!" id="button"/>		
-
-		</form>
+		</div>
+		<div class="secondary-content" style="left:750px; bottom:738px;">
+			<div class="header">Login</div>
+			<form>
+				Email:<input name="email" type="text" style="position:relative;left:34px;"><br/>
+				Password:<input name="pass" type="password" style="position:relative;left:8px;"><br/>
+				<input type="submit" value="Login" id="button" style="position:relative; top:10px;"/>
+				<span>New here? <a href="sign-up.html">Register now</a></span>
+			</form>
+		</div>
+		<div class="secondary-content" style="left:750px; top:149px; height:713px;">
+			<div class="header">Recent Uploads</div>
+			<div id="uploads">
+				<div class="upload">
+				
 				</div>
+			</div>
+		</div>
 	</div>
+	<div id="footer" style="left:335px;">
+		<div class="foot-col">
+			<span class="footer-head">Ploadit</span><br />
+			<a href="index.html" class="foot-link">Home</a><br />
+			<a href="about.html" class="foot-link">About us</a><br />
+			<a href="notes.html" class="foot-link">Notes</a><br />
+			<a href="contact.html" class="foot-link">Contact</a><br />
 		</div>
-		<div id="body-bg">
-			<div class="footer" style="left:200px;">
-				<div class="footer-head">More</div>
-				<a href="team.html" class="foot-link">The Ploadit Team</a><br />
-				<a href="contact.html" class="foot-link">Help Center</a><br />
-				<a href="how.html" class="foot-link">The Ploadit Guide</a><br />
-			</div>
-			<div class="footer" style="left:390px;bottom:-600px;">
-				<div class="footer-head">Ploadit</div>
-				<a href="index.html" class="foot-link">Home</a><br />
-				<a href="about.html" class="foot-link">About us</a><br />
-				<a href="notes.html" class="foot-link">Notes</a><br />
-				<a href="contact.html" class="foot-link">Contact</a><br />
-			</div>
+		<div class="foot-col">
+			<span class="footer-head">More</span><br />
+			<a href="team.html" class="foot-link">The Ploadit Team</a><br />
+			<a href="contact.html" class="foot-link">Help Center</a><br />
+			<a href="how.html" class="foot-link">The Ploadit Guide</a><br />
 		</div>
+	</div>
 </body>
 </html>
