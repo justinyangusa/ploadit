@@ -3,7 +3,7 @@ Ploadit Backend
 
 See the [main repo README](../README.md) for more information
 
-The backend of this project is implemented using Node.js and SQL. Originally I wrote it in Python, but I switched over to Node.js to allow for more flexibility for the forum features on which I am currently working.
+The backend of this project is implemented with Node.js. Originally I wrote it in Python, but I switched over to Node.js to allow for more flexibility for the forum features on which I am currently working.
 
 Installation
 ------------
@@ -19,7 +19,7 @@ This might take a while depending on the bandwidth to the server. Usually it sho
 Next, run the program! Who'd thought?
 
 ```
-node app.js
+node server.js
 ```
 
 The server should be up an running! Head on over to your nearest web browser and open it up on whichever port you specified in the environment variables. If error free, you're all good.

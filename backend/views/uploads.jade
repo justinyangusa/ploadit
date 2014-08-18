@@ -1,0 +1,37 @@
+extends backbone
+
+block bodyContent
+	// Fixed navbar
+	#navigation.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='/profile')
+					img(src='/img/favicon.png', alt='Ploadit')
+					| &nbsp;
+					b Ploadit
+			ul.nav.navbar-nav.navbar-right
+				li
+					p
+						| Welcome, usr!
+				li
+					a.btn.btn-default.btn-sm(href='/logout') Logout
+			// /.nav-collapse
+	section#home(name='home')
+	#headerwrap
+		.container
+			.row.centered
+				.col-lg-12
+					p
+						| There exist&lpar;s&rpar; 1 upload&lpar;s&rpar; in the past week.
+					h3
+						b Test notes
+						| &nbsp;by user&nbsp;
+						b system
+						|, class&nbsp;
+						b AP BC Calculus
+					h4 2014 08 16 23 16 22 PDT
+					img(src='img/note.png')

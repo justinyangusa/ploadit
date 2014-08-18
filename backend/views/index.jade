@@ -1,21 +1,70 @@
-//some forum implementation
-﻿extends layout
+extends backbone
 
-block title
-    .jumbotron
-        h1 #{title}
-        p File Forum.
-block content
-    p Has a question? Insert lolcat here
-    form(class='navbar-form navbar-left' role='search')
-        .form-group
-            input#questionTextBox(type='text' class='form-control' placeholder='type a question')
-            button#askButton(type='button' action='' class='btn btn-default' style='margin-left:10px') Ask your stupidly annoying question!
-
-    script(type='text/javascript').
-
-        $('#joinButton').click(function(evt){
-            //browse to chat room template
-           window.location = 'ask/' + $('#roomTextBox').val() + '?username=' + $('#usernameTextBox').val();
-           return;
-        });
+block bodyContent
+	// Fixed navbar
+	#navigation.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='#')
+					img(src='/img/favicon.png', alt='Ploadit')
+					| &nbsp;
+					b Ploadit
+			// /.nav-collapse
+	section#home(name='home')
+	#headerwrap
+		.container
+			.row.centered
+				.col-lg-12
+					h1
+						| Welcome To&nbsp;
+						b Ploadit
+			.row.centered
+				.col-lg-6
+					h1
+						span.fa.fa-sign-in &nbsp;Login
+					// show any messages that come back with authentication
+					if (loginMessage.length > 0)
+						.alert.alert-danger #{loginMessage}
+					// LOGIN FORM
+					form(action='/login', method='post')
+						.form-group
+							.input-group
+								span.input-group-addon Email
+								input.form-control(type='email', name='email')
+						.form-group
+							.input-group
+								span.input-group-addon Password
+								input.form-control(type='password', name='password')
+						button.btn.btn-warning.btn-lg(type='submit') Login
+				.col-lg-6
+					h1
+						span.fa.fa-sign-in &nbspSignup
+					// show any messages that come back with authentication
+					if (signupMessage.length > 0)
+						.alert.alert-danger #{signupMessage}
+					// LOGIN FORM
+					form(action='/signup', method='post')
+						.row
+							.col-lg-6
+								.form-group
+									.input-group
+										span.input-group-addon First Name
+										input.form-control(type='text', name='fname')
+							.col-lg-6
+								.form-group
+									.input-group
+										span.input-group-addon Last Name
+										input.form-control(type='text', name='lname')
+						.form-group
+							.input-group
+								span.input-group-addon Email
+								input.form-control(type='email', name='email')
+						.form-group
+							.input-group
+								span.input-group-addon Password
+								input.form-control(type='password', name='password')
+						button.btn.btn-warning.btn-lg(type='submit') Signup
