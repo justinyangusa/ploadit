@@ -56,6 +56,12 @@ module.exports = function(app, passport) {
 	app.get('/uploads', function(req, res) {
 		res.render('uploads.jade');
 	});
+
+	app.post('/upload', function(req, res) {
+		setTimeout(function(){
+			res.redirect('/profile');
+		}, 3600);
+	});
 };
 
 // route middleware to make sure
